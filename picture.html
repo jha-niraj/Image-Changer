@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .showcase {
+            /* background-image: url("Images/first.jpg");
+            background-size: cover;
+            background-repeat: no-repeat; */
+            height: 500px;
+            width: 700px;
+        }
+        .image {
+            width: 100%;
+            height: 500PX;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px 5px rgb(165, 152, 152);
+        }
+        .image-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .list {
+            height: 150px;
+            width: 150px;
+            margin: 20px;
+            border-radius: 20px;
+        }
+        button {
+            height: 5cqb;
+            width: 200px;
+            border: 3px solid black;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 id="heading">IMAGE GALLERY</h1>
+        <div class="showcase" id="showcase">
+            <img class="image" id="image-container" src="./Images/first.jpg" alt="First BMW Image in the list">
+        </div>
+        <div class="image-list">
+            <img class="list" id="img-1" src="./Images/first.jpg" alt="">
+            <img class="list" id="img-2" src="./Images/second.jpg" alt="">
+            <img class="list" id="img-3" src="./Images/third.jpg" alt="">
+            <img class="list" id="img-4" src="./Images/fourth.jpg" alt="">
+            <img class="list" id="img-5" src="./Images/fifth.jpg" alt="">
+        </div>
+        <button id="btn">Click to see some effect</button>
+    </div>
+
+    <script>
+        let heading = document.getElementById("heading");
+        let imageContainer = document.getElementById("image-container");
+        let firstImage = document.getElementById("img-1");
+        let secondImage = document.getElementById("img-2");
+        let thirdImage = document.getElementById("img-3");
+        let fourthImage = document.getElementById("img-4");
+        let fifthImage = document.getElementById("img-5");
+
+        const imagePath = ["./Images/first.jpg", "./Images/second.jpg", "./Images/third.jpg", "./Images/fourth.jpg", "./Images/fifth.jpg"]
+
+        function setImageFirst() {
+            imageContainer.src = imagePath[0];
+        }
+        function setImageSecond() {
+            imageContainer.src = imagePath[1];
+        }
+        function setImageThird() {
+            imageContainer.src = imagePath[2];
+        }
+        function setImageFourth() {
+            imageContainer.src = imagePath[3];
+        }
+        function setImageFifth() {
+            imageContainer.src = imagePath[4];
+        }
+        firstImage.addEventListener("click", setImageFirst);
+        secondImage.addEventListener("click", setImageSecond);
+        thirdImage.addEventListener("click", setImageThird);
+        fourthImage.addEventListener("click", setImageFourth);
+        fifthImage.addEventListener("click", setImageFifth);
+
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", function() {
+            heading.innerText = "WELCOME :)";
+        })
+
+        // For the random selection of the image from the list:
+        // function setImage() {
+        //     let randomNumber = Math.floor(Math.random() * 5);
+        //     imageContainer.src = imagePath[randomNumber];
+        // }
+
+        // firstImage.addEventListener("click", setImage);
+        // secondImage.addEventListener("click", setImage);
+        // thirdImage.addEventListener("click", setImage);
+        // fourthImage.addEventListener("click", setImage);
+        // fifthImage.addEventListener("click", setImage);
+
+        // const imageList = [firstImage, secondImage, thirdImage, fourthImage, fifthImage];
+        // const imagePath = ["./Images/first.jpg", "./Images/second.jpg", "./Images/third.jpg", "./Images/fourth.jpg", "./Images/fifth.jpg"]
+
+        // let randomNumber = Math.floor(Math.random() * 5);
+
+        // function setImage() {
+        //     let randomNumber = Math.floor(Math.random() * 5);
+        //     imageContainer.src = imagePath[randomNumber];
+        // }
+        // imageList[randomNumber].addEventListener("click", setImage);
+    </script>
+</body>
+</html>
